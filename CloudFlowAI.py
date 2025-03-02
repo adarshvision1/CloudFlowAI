@@ -163,7 +163,8 @@ class HybridQueueSystem:
                 # Simulate more variation for latency and error rate.
                 self.logger.metrics["latency_p99"] = np.random.uniform(5, 25)
                 self.logger.metrics["error_rate"] = np.random.uniform(0, 5)
-            simulated_load = np.random.uniform(0, 1)
+                # Compute simulated load as the ratio of messages_ingested to total_messages.
+                simulated_load = self.messages_ingested / self.total_messages if self.total_messages > 0 else 0
             self.traffic_data.append(simulated_load)
             new_scale = self.scaler.analyze_workload(list(self.traffic_data))
             with self.lock:
