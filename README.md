@@ -17,7 +17,7 @@ Compliance Monitoring: Combines tracking of HIPAA and GDPR compliance.
 Live Monitoring: Gives cloud developers access to measurements and insights in real time.
 
 Setting up
-git clone https://github.com/yourusername/CloudFlowAI.git
+git clone https://github.com/aadarshvision1/CloudFlowAI.git
 cd CloudFlowAI
 pip install -r requirements.txt
 
